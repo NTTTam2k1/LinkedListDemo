@@ -95,7 +95,7 @@ class LinkedList {
     }
 
     // Get the middle value
-    public int getMiddle() {
+    /*public int getMiddle() {
         if (head == null) throw new IllegalStateException("List is empty");
         Node slow = head, fast = head;
         while (fast != null && fast.next != null) {
@@ -103,6 +103,18 @@ class LinkedList {
             fast = fast.next.next;
         }
         return slow.data;
+    }*/
+
+    // Find value in the list
+    public boolean findValue(int target) {
+        Node current = head;
+        while (current != null) {
+            if (current.data == target) {
+                return true; // Value found
+            }
+            current = current.next;
+        }
+        return false;
     }
 
     // Print the list
@@ -142,9 +154,17 @@ public class LinkedListDemo {
         ll.insertAtTail(60);
         System.out.println("Head value: " + ll.getHead());
         System.out.println("Tail value: " + ll.getTail());
-        System.out.println("Middle value: " + ll.getMiddle());*/
+        // Find the value 40 in the list
+        boolean found = ll.findValue(40);
+        System.out.println("Is value 40 in the list? " + found); // Output: true
+
+        // Try finding a value not in the list
+        boolean notFound = ll.findValue(80);
+        System.out.println("Is value 80 in the list? " + notFound); // Output: false
 
         //ll.printList();
+
+         */
 
 
 
